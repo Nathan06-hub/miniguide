@@ -1,43 +1,264 @@
 <!DOCTYPE html>
-
 <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Technique : De Git au Déploiement GitHub Pages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
- <head>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
 
- <meta charset="UTF-8"/>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
 
- <meta name="viewport" content="width=device-width, initial-scale=1.
+        header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
 
-0"/>
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
- <title>Mon Portfolio</title>
+        header p {
+            font-size: 0.95em;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
 
- <link rel="stylesheet" href="style.css"/>
+        .content {
+            padding: 30px;
+        }
 
- </head>
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+        }
 
- <body>
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
- <header>
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
 
- <h1>Bienvenue sur mon portfolio</h1>
+        .section p {
+            margin-bottom: 12px;
+            color: #4a5568;
+        }
 
- </header>
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+            border-left: 3px solid #667eea;
+        }
 
-<main>
+        .code-block code {
+            display: block;
+            white-space: pre;
+        }
 
- <p>Je suis étudiant en informatique.</p>
+        .command {
+            color: #48bb78;
+        }
 
- <section>
+        .warning {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
 
- <h2>Mes Projets</h2>
+        .warning strong {
+            color: #c53030;
+            display: block;
+            margin-bottom: 5px;
+        }
 
- <p>Projet 1 : Application de gestion de tâches (tasks)</p>
+        .info {
+            background: #ebf8ff;
+            border-left: 4px solid #4299e1;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
 
- </section>
+        .info strong {
+            color: #2c5282;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-</main>
- </body>
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
 
+        li {
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+
+        footer {
+            background: #edf2f7;
+            padding: 20px 30px;
+            text-align: center;
+            color: #4a5568;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+
+            header h1 {
+                font-size: 1.4em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Guide Technique : De Git au Déploiement GitHub Pages</h1>
+            <p>Ce document récapitule les étapes techniques abordées lors de la séance d'immersion à l'Université Aube Nouvelle. Il permet de configurer, versionner et héberger un projet web.</p>
+        </header>
+
+        <div class="content">
+            <div class="section">
+                <h2><span class="section-number">1</span> Configuration Initiale</h2>
+                <p>Avant toute opération, Git doit être configuré sur votre machine pour identifier l'auteur des modifications :</p>
+                <div class="code-block">
+                    <code><span class="command">git config --global user.name "Votre Nom"</span>
+<span class="command">git config --global user.email "votre@email.com"</span></code>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">2</span> Initialisation du Projet Local</h2>
+                <p>Dans le dossier racine de votre projet (contenant vos fichiers HTML/CSS) :</p>
+                <ul>
+                    <li><strong>Initialiser le dépôt :</strong></li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">git init</span></code>
+                </div>
+                <ul>
+                    <li><strong>Préparer les fichiers :</strong></li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">git add .</span></code>
+                </div>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #718096;">(Le point indique que tous les fichiers sont sélectionnés)</p>
+                <ul>
+                    <li><strong>Valider la version :</strong></li>
+                </ul>
+                <div class="code-block">
+                    <code><span class="command">git commit -m "Initialisation du projet"</span></code>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">3</span> Liaison avec GitHub</h2>
+                <p>Créez un nouveau dépôt (Repository) sur votre compte GitHub. <strong>Ne pas cocher</strong> l'option "Initialize with a README".</p>
+                <p style="margin-top: 15px;"><strong>Liez votre dossier local au dépôt distant :</strong></p>
+                <div class="code-block">
+                    <code><span class="command">git remote add origin https://github.com/votre-utilisateur/votre-depot.git</span></code>
+                </div>
+                <p style="margin-top: 15px;"><strong>Envoyez vos fichiers :</strong></p>
+                <div class="code-block">
+                    <code><span class="command">git branch -M main</span></code>
+                </div>
+                <p style="margin-top: 5px; font-size: 0.9em; color: #718096;">(S'assurer d'être sur la branche principale)</p>
+                <div class="code-block">
+                    <code><span class="command">git push -u origin main</span></code>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">4</span> Déploiement via GitHub Pages</h2>
+                <p>L'hébergement permet de rendre votre site accessible via une URL publique.</p>
+                <ul>
+                    <li>Sur GitHub, accédez à l'onglet <strong>Settings</strong> de votre dépôt.</li>
+                    <li>Dans le menu latéral gauche, cliquez sur <strong>Pages</strong>.</li>
+                    <li>Sous la section <strong>Build and deployment</strong>, assurez-vous que la source est "Deploy from a branch".</li>
+                    <li>Sélectionnez la branche <strong>main</strong> et le dossier <strong>/ (root)</strong>, puis cliquez sur <strong>Save</strong>.</li>
+                </ul>
+                <div class="warning">
+                    <strong>⚠️ Condition impérative :</strong>
+                    Votre fichier d'entrée doit être nommé <code>index.html</code> et situé à la racine du dépôt. GitHub Pages ne reconnaîtra pas les noms comme <code>accueil.html</code> ou <code>index.php</code>.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="section-number">5</span> Vérification</h2>
+                <p>Après quelques minutes, un bandeau apparaîtra en haut de la section Pages indiquant : <strong>"Your site is live at..."</strong>. Cliquez sur le lien pour vérifier le rendu de votre site.</p>
+                <div class="info">
+                    <strong>📌 Note importante :</strong>
+                    Ce guide constitue le prérequis minimal pour la séance de la semaine prochaine. Merci de vous assurer que votre environnement est opérationnel d'ici là.
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>📚 Formation Git & GitHub Pages</p>
+        </footer>
+    </div>
+</body>
 </html>
-
